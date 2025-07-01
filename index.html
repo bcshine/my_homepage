@@ -236,6 +236,29 @@
         </div>
     </section>
 
+    <!-- 챗봇 플로팅 버튼: 우하단에 고정되어 있는 챗봇 연결 버튼이에요 -->
+    <div class="chatbot-container">
+        <!-- 챗봇 버튼: 클릭하면 ZAVIS 챗봇이 열려요 -->
+        <button class="chatbot-button" onclick="openChatbot()" title="ZAVIS 챗봇과 상담하기">
+            <!-- 챗봇 아이콘: 말풍선 모양의 아이콘이에요 -->
+            <svg class="chatbot-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 2H4C2.9 2 2 2.9 2 4V16C2 17.1 2.9 18 4 18H6L10 22L14 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" stroke="white" stroke-width="2" fill="white"/>
+                <circle cx="8" cy="9" r="1" fill="#007bff"/>
+                <circle cx="12" cy="9" r="1" fill="#007bff"/>
+                <circle cx="16" cy="9" r="1" fill="#007bff"/>
+            </svg>
+            <!-- 챗봇 텍스트: 버튼 안의 작은 글자예요 -->
+            <span class="chatbot-text">ZAVIS</span>
+        </button>
+        
+        <!-- 챗봇 툴팁: 마우스를 올리면 보이는 설명이에요 -->
+        <div class="chatbot-tooltip">
+            <span>💬 ZAVIS 챗봇</span>
+            <br>
+            <small>사장님의 수퍼앱과 상담하세요!</small>
+        </div>
+    </div>
+
     <!-- JavaScript 파일 연결: 웹페이지가 움직이게 만들어주는 파일이에요 -->
     <script src="script.js"></script>
 </body>

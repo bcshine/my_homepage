@@ -332,9 +332,31 @@ function toggleDescription(button) {
         console.log('제품 설명을 전체로 펼쳤어요'); // 개발자 확인용 메시지
     }
     
-    // 버튼에 살짝 애니메이션 효과를 줘요
-    button.style.transform = 'scale(0.95)'; // 버튼을 살짝 작게 만들어요
-    setTimeout(function() {
-        button.style.transform = 'scale(1)'; // 0.1초 후에 원래 크기로 돌려놔요
-    }, 100);
+         // 버튼에 살짝 애니메이션 효과를 줘요
+     button.style.transform = 'scale(0.95)'; // 버튼을 살짝 작게 만들어요
+     setTimeout(function() {
+         button.style.transform = 'scale(1)'; // 0.1초 후에 원래 크기로 돌려놔요
+     }, 100);
+ }
+
+// ===== 챗봇 기능 ===== //
+
+// 챗봇을 여는 함수: ZAVIS 챗봇 페이지를 새 창에서 열어주는 역할을 해요
+function openChatbot() {
+    // ZAVIS 챗봇 링크: 사장님의 수퍼앱 챗봇이에요
+    const chatbotUrl = 'https://chatgpt.com/g/g-684f6e6b9ed48191bb537979053a36cc-naeireumeun-zavis-sajangnimyi-supeoaeb';
+    
+    // 새 창에서 챗봇을 열어요
+    window.open(chatbotUrl, '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
+    
+    console.log('ZAVIS 챗봇을 새 창에서 열었어요!'); // 개발자 확인용 메시지
+    
+    // 클릭 효과: 챗봇 버튼에 살짝 애니메이션을 줘요
+    const chatbotButton = document.querySelector('.chatbot-button');
+    if (chatbotButton) {
+        chatbotButton.style.transform = 'scale(0.9)'; // 버튼을 살짝 작게 만들어요
+        setTimeout(function() {
+            chatbotButton.style.transform = 'scale(1)'; // 0.2초 후에 원래 크기로 돌려놔요
+        }, 200);
+    }
 } 
