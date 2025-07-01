@@ -1,0 +1,754 @@
+/* 기본 설정: 모든 요소의 기본 스타일을 정해요 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 박스 크기를 편하게 계산할 수 있어요 */
+}
+
+/* 전체 페이지 설정: 웹페이지 전체의 기본 모양을 정해요 */
+body {
+    font-family: 'Noto Sans KR', sans-serif; /* 넥슨폰트 대신 노토산스로 설정해요 */
+    background-color: white; /* 배경색을 흰색으로 해요 */
+    line-height: 1.6; /* 글줄 간격을 보기 좋게 해요 */
+}
+
+/* 헤더 전체 스타일: 웹사이트 맨 위쪽 부분을 꾸며요 */
+.header {
+    background-color: white; /* 배경색을 흰색으로 해요 */
+    padding: 15px 20px; /* 안쪽 여백을 주어서 여유 공간을 만들어요 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 살짝 그림자를 줘서 입체감을 만들어요 */
+    position: sticky; /* 스크롤해도 헤더가 위에 붙어있게 해요 */
+    top: 0; /* 맨 위에 붙어있게 해요 */
+    z-index: 1000; /* 다른 요소들보다 위에 보이게 해요 */
+    
+    /* 가로로 나란히 배치하는 설정 */
+    display: flex; /* 안의 요소들을 가로로 나란히 놓아요 */
+    align-items: center; /* 세로 가운데로 맞춰요 */
+    justify-content: space-between; /* 양쪽 끝과 가운데로 균등하게 배치해요 */
+    gap: 10px; /* 요소들 사이의 간격을 10px로 해요 */
+    max-width: 1200px; /* 최대 너비를 정해서 너무 넓어지지 않게 해요 */
+    margin: 0 auto; /* 가운데 정렬을 해요 */
+    width: 100%; /* 전체 너비를 차지하게 해요 */
+}
+
+/* 로고 영역 스타일: 왼쪽 로고와 브랜드명 부분이에요 */
+.logo-section {
+    display: flex; /* 로고와 브랜드명을 가로로 나란히 놓아요 */
+    align-items: center; /* 세로 가운데로 맞춰요 */
+    gap: 12px; /* 로고와 브랜드명 사이 간격을 12px로 해요 */
+}
+
+/* 로고 이미지 스타일: 회사 로고를 예쁘게 보이게 해요 */
+.logo {
+    height: 40px; /* 로고 높이를 40px로 해요 */
+    width: auto; /* 너비는 비율에 맞게 자동으로 조절해요 */
+    object-fit: contain; /* 이미지가 찌그러지지 않게 해요 */
+}
+
+/* 브랜드명 스타일: 회사 이름을 예쁘게 보이게 해요 */
+.brand-name {
+    font-size: 24px; /* 글자 크기를 24px로 해요 */
+    font-weight: 700; /* 글자를 굵게 해요 */
+    color: #333; /* 글자 색을 진한 회색으로 해요 */
+    white-space: nowrap; /* 글자가 줄바꿈되지 않게 해요 */
+}
+
+/* 네비게이션 메뉴 스타일: 가운데 메뉴 버튼들을 꾸며요 */
+.navigation {
+    display: flex; /* 메뉴들을 가로로 나란히 놓아요 */
+    align-items: center; /* 세로 가운데로 맞춰요 */
+    gap: 30px; /* 메뉴들 사이 간격을 30px로 해요 */
+}
+
+/* 네비게이션 링크 스타일: 각각의 메뉴 버튼을 꾸며요 */
+.nav-link {
+    text-decoration: none; /* 밑줄을 없애요 */
+    color: #333; /* 글자 색을 진한 회색으로 해요 */
+    font-size: 16px; /* 글자 크기를 16px로 해요 */
+    font-weight: 500; /* 글자를 중간 굵기로 해요 */
+    padding: 10px 0; /* 위아래 여백을 줘서 클릭하기 쉽게 해요 */
+    transition: color 0.3s ease; /* 색상이 바뀔 때 부드럽게 변하게 해요 */
+    white-space: nowrap; /* 글자가 줄바꿈되지 않게 해요 */
+}
+
+/* 네비게이션 링크에 마우스를 올렸을 때: 마우스를 올리면 색이 바뀌어요 */
+.nav-link:hover {
+    color: #007bff; /* 파란색으로 바뀌어요 */
+}
+
+/* 인증 영역 스타일: 오른쪽 로그인 버튼 부분이에요 */
+.auth-section {
+    display: flex; /* 버튼을 정렬해요 */
+    align-items: center; /* 세로 가운데로 맞춰요 */
+}
+
+/* 로그인 버튼 스타일: 로그인 버튼을 예쁘게 꾸며요 */
+.login-btn {
+    background-color: white; /* 배경색을 흰색으로 해요 */
+    color: #333; /* 글자 색을 진한 회색으로 해요 */
+    border: 2px solid #333; /* 검은색 테두리를 만들어요 */
+    border-radius: 25px; /* 모서리를 둥글게 해요 */
+    padding: 10px 20px; /* 안쪽 여백을 줘서 버튼을 크게 해요 */
+    font-size: 14px; /* 글자 크기를 14px로 해요 */
+    font-weight: 500; /* 글자를 중간 굵기로 해요 */
+    cursor: pointer; /* 마우스를 올리면 손가락 모양으로 바뀌어요 */
+    transition: all 0.3s ease; /* 모든 변화가 부드럽게 일어나게 해요 */
+    white-space: nowrap; /* 글자가 줄바꿈되지 않게 해요 */
+}
+
+/* 로그인 버튼에 마우스를 올렸을 때: 마우스를 올리면 색이 바뀌어요 */
+.login-btn:hover {
+    background-color: #333; /* 배경색이 검은색으로 바뀌어요 */
+    color: white; /* 글자 색이 흰색으로 바뀌어요 */
+}
+
+/* 모바일 메뉴 버튼 스타일: 화면이 작을 때 나타나는 햄버거 메뉴에요 */
+.mobile-menu-btn {
+    display: none; /* 기본적으로는 보이지 않게 해요 */
+    flex-direction: column; /* 줄들을 세로로 쌓아요 */
+    justify-content: space-between; /* 줄들 사이에 균등한 간격을 둬요 */
+    width: 30px; /* 버튼 너비를 30px로 해요 */
+    height: 24px; /* 버튼 높이를 24px로 해요 */
+    background: none; /* 배경을 투명하게 해요 */
+    border: none; /* 테두리를 없애요 */
+    cursor: pointer; /* 마우스를 올리면 손가락 모양으로 바뀌어요 */
+    padding: 0; /* 여백을 없애요 */
+}
+
+/* 햄버거 메뉴 줄 스타일: 햄버거 메뉴의 각 줄을 꾸며요 */
+.mobile-menu-btn span {
+    display: block; /* 블록 요소로 만들어요 */
+    height: 3px; /* 줄 두께를 3px로 해요 */
+    width: 100%; /* 줄 너비를 전체로 해요 */
+    background-color: #333; /* 줄 색을 진한 회색으로 해요 */
+    border-radius: 2px; /* 줄 끝을 살짝 둥글게 해요 */
+    transition: all 0.3s ease; /* 변화가 부드럽게 일어나게 해요 */
+}
+
+/* 모바일 메뉴 스타일: 화면이 작을 때 나타나는 메뉴에요 */
+.mobile-menu {
+    display: none; /* 기본적으로는 보이지 않게 해요 */
+    position: absolute; /* 절대 위치로 배치해요 */
+    top: 100%; /* 헤더 바로 아래에 위치하게 해요 */
+    left: 0; /* 왼쪽 끝에 맞춰요 */
+    right: 0; /* 오른쪽 끝에 맞춰요 */
+    background-color: white; /* 배경색을 흰색으로 해요 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자를 줘서 입체감을 만들어요 */
+    padding: 20px; /* 안쪽 여백을 줘요 */
+    flex-direction: column; /* 메뉴들을 세로로 쌓아요 */
+    gap: 15px; /* 메뉴들 사이 간격을 15px로 해요 */
+    z-index: 999; /* 다른 요소들보다 위에 보이게 해요 */
+}
+
+/* 모바일 메뉴가 활성화됐을 때: 메뉴가 열렸을 때의 스타일이에요 */
+.mobile-menu.active {
+    display: flex; /* 메뉴를 보이게 해요 */
+}
+
+/* 모바일 네비게이션 링크 스타일: 모바일 메뉴의 각 항목을 꾸며요 */
+.mobile-nav-link {
+    text-decoration: none; /* 밑줄을 없애요 */
+    color: #333; /* 글자 색을 진한 회색으로 해요 */
+    font-size: 18px; /* 글자 크기를 18px로 해요 */
+    font-weight: 500; /* 글자를 중간 굵기로 해요 */
+    padding: 10px 0; /* 위아래 여백을 줘요 */
+    border-bottom: 1px solid #eee; /* 아래쪽에 연한 선을 그어요 */
+    transition: color 0.3s ease; /* 색상 변화가 부드럽게 일어나게 해요 */
+}
+
+/* 모바일 네비게이션 링크에 마우스를 올렸을 때 */
+.mobile-nav-link:hover {
+    color: #007bff; /* 파란색으로 바뀌어요 */
+}
+
+/* 모바일 로그인 버튼 스타일: 모바일에서의 로그인 버튼이에요 */
+.mobile-login-btn {
+    background-color: white; /* 배경색을 흰색으로 해요 */
+    color: #333; /* 글자 색을 진한 회색으로 해요 */
+    border: 2px solid #333; /* 검은색 테두리를 만들어요 */
+    border-radius: 25px; /* 모서리를 둥글게 해요 */
+    padding: 12px 24px; /* 안쪽 여백을 줘요 */
+    font-size: 16px; /* 글자 크기를 16px로 해요 */
+    font-weight: 500; /* 글자를 중간 굵기로 해요 */
+    cursor: pointer; /* 마우스를 올리면 손가락 모양으로 바뀌어요 */
+    transition: all 0.3s ease; /* 모든 변화가 부드럽게 일어나게 해요 */
+    align-self: center; /* 가운데 정렬을 해요 */
+}
+
+/* 모바일 로그인 버튼에 마우스를 올렸을 때 */
+.mobile-login-btn:hover {
+    background-color: #333; /* 배경색이 검은색으로 바뀌어요 */
+    color: white; /* 글자 색이 흰색으로 바뀌어요 */
+}
+
+/* 태블릿 크기 화면일 때: 화면이 중간 크기일 때의 스타일이에요 */
+@media (max-width: 768px) {
+    /* 헤더 여백을 줄여요 */
+    .header {
+        padding: 12px 15px;
+    }
+    
+    /* 브랜드명 글자 크기를 줄여요 */
+    .brand-name {
+        font-size: 20px;
+    }
+    
+    /* 네비게이션 메뉴 간격을 줄여요 */
+    .navigation {
+        gap: 20px;
+    }
+    
+    /* 네비게이션 링크 글자 크기를 줄여요 */
+    .nav-link {
+        font-size: 14px;
+    }
+}
+
+/* 모바일 크기 화면일 때: 화면이 작을 때의 스타일이에요 */
+@media (max-width: 480px) {
+    /* 헤더를 상대적 위치로 바꿔요 */
+    .header {
+        position: relative;
+    }
+    
+    /* 데스크톱 네비게이션을 숨겨요 */
+    .navigation {
+        display: none;
+    }
+    
+    /* 데스크톱 로그인 버튼을 숨겨요 */
+    .auth-section {
+        display: none;
+    }
+    
+    /* 모바일 메뉴 버튼을 보이게 해요 */
+    .mobile-menu-btn {
+        display: flex;
+    }
+    
+    /* 브랜드명 글자 크기를 더 줄여요 */
+    .brand-name {
+        font-size: 18px;
+    }
+    
+    /* 로고 크기를 줄여요 */
+    .logo {
+        height: 35px;
+    }
+}
+
+/* ===== 히어로 섹션 스타일 ===== */
+
+/* 히어로 전체 섹션: 메인 비주얼 영역을 꾸며요 */
+.hero-section {
+    position: relative; /* 다른 요소들을 절대 위치로 배치할 수 있게 해요 */
+    width: 100%; /* 전체 너비를 차지해요 */
+    height: 100vh; /* 화면 전체 높이를 차지해요 */
+    overflow: hidden; /* 넘치는 부분은 숨겨요 */
+}
+
+/* 히어로 슬라이더 컨테이너: 슬라이드들이 들어가는 큰 박스예요 */
+.hero-slider {
+    position: relative; /* 슬라이드들을 상대적으로 배치해요 */
+    width: 100%; /* 전체 너비를 차지해요 */
+    height: 100%; /* 전체 높이를 차지해요 */
+}
+
+/* 개별 슬라이드 스타일: 각각의 이미지 슬라이드를 꾸며요 */
+.slide {
+    position: absolute; /* 슬라이드들을 겹쳐서 배치해요 */
+    top: 0; /* 맨 위에 붙여요 */
+    left: 0; /* 맨 왼쪽에 붙여요 */
+    width: 100%; /* 전체 너비를 차지해요 */
+    height: 100%; /* 전체 높이를 차지해요 */
+    background-size: cover; /* 배경 이미지가 전체를 덮게 해요 */
+    background-position: center; /* 배경 이미지를 가운데 맞춰요 */
+    background-repeat: no-repeat; /* 배경 이미지가 반복되지 않게 해요 */
+    display: flex; /* 안의 내용을 정렬하기 위해 플렉스를 사용해요 */
+    align-items: center; /* 세로 가운데 정렬해요 */
+    justify-content: center; /* 가로 가운데 정렬해요 */
+    opacity: 0; /* 처음에는 보이지 않게 해요 */
+    transition: opacity 1s ease-in-out; /* 서서히 나타나고 사라지게 해요 */
+}
+
+/* 활성화된 슬라이드: 현재 보여지는 슬라이드예요 */
+.slide.active {
+    opacity: 1; /* 완전히 보이게 해요 */
+}
+
+/* 슬라이드 내용 컨테이너: 글자와 버튼이 들어가는 박스예요 */
+.slide-content {
+    text-align: center; /* 모든 글자를 가운데 정렬해요 */
+    color: white; /* 글자 색을 흰색으로 해요 */
+    max-width: 800px; /* 최대 너비를 800px로 제한해요 */
+    padding: 40px 20px; /* 안쪽 여백을 줘요 */
+    background-color: transparent; /* 완전히 투명한 배경으로 해요 */
+    border-radius: 20px; /* 모서리를 둥글게 해요 */
+}
+
+/* 브랜드 제목: 회사 이름을 크고 예쁘게 보여줘요 */
+.brand-title {
+    font-size: 48px; /* 글자 크기를 48px로 해요 */
+    font-weight: 700; /* 글자를 굵게 해요 */
+    margin-bottom: 20px; /* 아래쪽 여백을 20px 줘요 */
+    color: white; /* 깔끔한 흰색 글자로 해요 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* 적당한 그림자로 가독성을 높여요 */
+    letter-spacing: 1px; /* 글자 사이 간격을 살짝 벌려서 세련되게 해요 */
+}
+
+/* 메인 제목: 주요 메시지를 보여주는 큰 글자예요 */
+.hero-title {
+    font-size: 36px; /* 글자 크기를 36px로 해요 */
+    font-weight: 600; /* 글자를 중간 굵기로 해요 */
+    margin-bottom: 20px; /* 아래쪽 여백을 20px 줘요 */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* 글자에 그림자를 줘서 잘 보이게 해요 */
+    line-height: 1.2; /* 줄 간격을 적당히 해요 */
+}
+
+/* 설명 텍스트: 자세한 설명을 보여주는 글자예요 */
+.hero-description {
+    font-size: 20px; /* 글자 크기를 20px로 해요 */
+    font-weight: 400; /* 글자를 보통 굵기로 해요 */
+    margin-bottom: 30px; /* 아래쪽 여백을 30px 줘요 */
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8); /* 글자에 그림자를 줘서 잘 보이게 해요 */
+    line-height: 1.4; /* 줄 간격을 적당히 해요 */
+    opacity: 0.9; /* 살짝 투명하게 해요 */
+}
+
+/* 구매 버튼: 클릭하면 쇼핑몰로 이동하는 버튼이에요 */
+.hero-btn {
+    background: linear-gradient(45deg, #007bff, #0056b3); /* 파란색 그라데이션 배경을 줘요 */
+    color: white; /* 글자 색을 흰색으로 해요 */
+    border: none; /* 테두리를 없애요 */
+    border-radius: 50px; /* 모서리를 둥글게 해요 */
+    padding: 15px 40px; /* 안쪽 여백을 줘서 버튼을 크게 해요 */
+    font-size: 18px; /* 글자 크기를 18px로 해요 */
+    font-weight: 600; /* 글자를 중간 굵기로 해요 */
+    cursor: pointer; /* 마우스를 올리면 손가락 모양으로 바뀌어요 */
+    transition: all 0.3s ease; /* 모든 변화가 부드럽게 일어나게 해요 */
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3); /* 버튼에 그림자를 줘요 */
+    text-transform: uppercase; /* 글자를 대문자로 만들어요 */
+    letter-spacing: 1px; /* 글자 사이 간격을 줘요 */
+}
+
+/* 구매 버튼에 마우스를 올렸을 때: 마우스를 올리면 더 예쁘게 바뀌어요 */
+.hero-btn:hover {
+    transform: translateY(-3px); /* 살짝 위로 올라가요 */
+    box-shadow: 0 12px 35px rgba(0, 123, 255, 0.4); /* 그림자가 더 진해져요 */
+    background: linear-gradient(45deg, #0056b3, #004085); /* 색이 더 진해져요 */
+}
+
+/* 이전/다음 버튼 공통 스타일: 화살표 버튼의 기본 모양이에요 */
+.prev-btn, .next-btn {
+    position: absolute; /* 절대 위치로 배치해요 */
+    top: 50%; /* 세로 가운데에 위치시켜요 */
+    transform: translateY(-50%); /* 정확히 가운데 맞춰요 */
+    background-color: rgba(255, 255, 255, 0.8); /* 반투명한 흰색 배경을 줘요 */
+    color: #333; /* 글자 색을 진한 회색으로 해요 */
+    border: none; /* 테두리를 없애요 */
+    border-radius: 50%; /* 완전히 둥글게 만들어요 */
+    width: 60px; /* 너비를 60px로 해요 */
+    height: 60px; /* 높이를 60px로 해요 */
+    font-size: 24px; /* 글자 크기를 24px로 해요 */
+    font-weight: bold; /* 글자를 굵게 해요 */
+    cursor: pointer; /* 마우스를 올리면 손가락 모양으로 바뀌어요 */
+    transition: all 0.3s ease; /* 모든 변화가 부드럽게 일어나게 해요 */
+    z-index: 10; /* 다른 요소들보다 위에 보이게 해요 */
+    backdrop-filter: blur(10px); /* 배경을 흐리게 해요 */
+}
+
+/* 이전 버튼: 왼쪽 화살표 버튼이에요 */
+.prev-btn {
+    left: 30px; /* 왼쪽에서 30px 떨어진 곳에 위치해요 */
+}
+
+/* 다음 버튼: 오른쪽 화살표 버튼이에요 */
+.next-btn {
+    right: 30px; /* 오른쪽에서 30px 떨어진 곳에 위치해요 */
+}
+
+/* 화살표 버튼에 마우스를 올렸을 때: 마우스를 올리면 더 진해져요 */
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(255, 255, 255, 1); /* 완전히 흰색이 돼요 */
+    transform: translateY(-50%) scale(1.1); /* 살짝 커져요 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* 그림자가 생겨요 */
+}
+
+/* 슬라이드 인디케이터 컨테이너: 점들이 들어가는 박스예요 */
+.slide-indicators {
+    position: absolute; /* 절대 위치로 배치해요 */
+    bottom: 30px; /* 아래쪽에서 30px 떨어진 곳에 위치해요 */
+    left: 50%; /* 가로 가운데에 위치해요 */
+    transform: translateX(-50%); /* 정확히 가운데 맞춰요 */
+    display: flex; /* 점들을 가로로 나란히 놓아요 */
+    gap: 15px; /* 점들 사이 간격을 15px로 해요 */
+    z-index: 10; /* 다른 요소들보다 위에 보이게 해요 */
+}
+
+/* 개별 인디케이터: 각각의 점을 꾸며요 */
+.indicator {
+    width: 12px; /* 너비를 12px로 해요 */
+    height: 12px; /* 높이를 12px로 해요 */
+    border-radius: 50%; /* 완전히 둥글게 만들어요 */
+    background-color: rgba(255, 255, 255, 0.5); /* 반투명한 흰색으로 해요 */
+    cursor: pointer; /* 마우스를 올리면 손가락 모양으로 바뀌어요 */
+    transition: all 0.3s ease; /* 모든 변화가 부드럽게 일어나게 해요 */
+    backdrop-filter: blur(10px); /* 배경을 흐리게 해요 */
+}
+
+/* 활성화된 인디케이터: 현재 슬라이드를 나타내는 점이에요 */
+.indicator.active {
+    background-color: white; /* 완전히 흰색으로 바뀌어요 */
+    transform: scale(1.3); /* 살짝 커져요 */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* 빛나는 효과를 줘요 */
+}
+
+/* 인디케이터에 마우스를 올렸을 때 */
+.indicator:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* 더 진한 흰색이 돼요 */
+    transform: scale(1.2); /* 살짝 커져요 */
+}
+
+/* 태블릿 크기 화면일 때: 화면이 중간 크기일 때의 히어로 스타일이에요 */
+@media (max-width: 768px) {
+    /* 히어로 높이를 줄여요 */
+    .hero-section {
+        height: 80vh;
+    }
+    
+    /* 브랜드 제목 크기를 줄여요 */
+    .brand-title {
+        font-size: 36px;
+    }
+    
+    /* 메인 제목 크기를 줄여요 */
+    .hero-title {
+        font-size: 28px;
+    }
+    
+    /* 설명 텍스트 크기를 줄여요 */
+    .hero-description {
+        font-size: 18px;
+    }
+    
+    /* 슬라이드 내용 여백을 줄여요 */
+    .slide-content {
+        padding: 30px 20px;
+        max-width: 600px;
+    }
+    
+    /* 화살표 버튼 크기를 줄여요 */
+    .prev-btn, .next-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    /* 화살표 버튼 위치를 조정해요 */
+    .prev-btn {
+        left: 20px;
+    }
+    
+    .next-btn {
+        right: 20px;
+    }
+}
+
+/* 모바일 크기 화면일 때: 화면이 작을 때의 히어로 스타일이에요 */
+@media (max-width: 480px) {
+    /* 히어로 높이를 더 줄여요 */
+    .hero-section {
+        height: 70vh;
+    }
+    
+    /* 브랜드 제목 크기를 더 줄여요 */
+    .brand-title {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    /* 메인 제목 크기를 더 줄여요 */
+    .hero-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    
+    /* 설명 텍스트 크기를 더 줄여요 */
+    .hero-description {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+    
+    /* 슬라이드 내용 여백을 더 줄여요 */
+    .slide-content {
+        padding: 20px 15px;
+        max-width: 90%;
+    }
+    
+    /* 구매 버튼 크기를 조정해요 */
+    .hero-btn {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+    
+    /* 화살표 버튼을 더 작게 해요 */
+    .prev-btn, .next-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+    
+    /* 화살표 버튼 위치를 다시 조정해요 */
+    .prev-btn {
+        left: 15px;
+    }
+    
+    .next-btn {
+        right: 15px;
+    }
+    
+    /* 인디케이터를 더 아래로 내려요 */
+    .slide-indicators {
+        bottom: 20px;
+    }
+    
+         /* 인디케이터 크기를 줄여요 */
+     .indicator {
+         width: 10px;
+         height: 10px;
+     }
+ }
+
+/* ===== 제품 섹션 스타일 ===== */
+
+/* 제품 전체 섹션: 상품들을 소개하는 영역을 꾸며요 */
+.product-section {
+    background-color: #f8f9fa; /* 연한 회색 배경으로 구분을 줘요 */
+    padding: 80px 20px; /* 위아래 80px, 좌우 20px 여백을 줘요 */
+}
+
+/* 제품 컨테이너: 모든 제품 내용이 들어가는 큰 박스예요 */
+.product-container {
+    max-width: 1200px; /* 최대 너비를 1200px로 제한해요 */
+    margin: 0 auto; /* 가운데 정렬을 해요 */
+    width: 100%; /* 전체 너비를 차지해요 */
+}
+
+/* 매장 이미지 컨테이너: 매장 사진이 들어가는 박스예요 */
+.shop-image-container {
+    text-align: center; /* 이미지를 가운데 정렬해요 */
+    margin-bottom: 40px; /* 아래쪽 여백을 40px 줘요 */
+}
+
+/* 매장 이미지: 매장 사진을 예쁘게 보이게 해요 */
+.shop-image {
+    width: 100%; /* 전체 너비를 차지해요 */
+    max-width: 800px; /* 최대 너비를 800px로 제한해요 */
+    height: 300px; /* 높이를 300px로 고정해요 */
+    object-fit: cover; /* 이미지가 찌그러지지 않게 해요 */
+    border-radius: 15px; /* 모서리를 둥글게 해요 */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* 그림자를 줘서 입체감을 만들어요 */
+}
+
+/* 제품 섹션 제목: 큰 글씨로 된 제목을 꾸며요 */
+.product-title {
+    font-size: 36px; /* 글자 크기를 36px로 해요 */
+    font-weight: 700; /* 글자를 굵게 해요 */
+    color: #333; /* 검은색으로 해요 */
+    text-align: center; /* 가운데 정렬을 해요 */
+    margin-bottom: 50px; /* 아래쪽 여백을 50px 줘요 */
+    line-height: 1.2; /* 줄 간격을 적당히 해요 */
+}
+
+/* 제품 그리드: 4개의 제품을 2x2로 배치하는 영역이에요 */
+.product-grid {
+    display: grid; /* 그리드 레이아웃을 사용해요 */
+    grid-template-columns: repeat(2, 1fr); /* 2개의 열로 나눠요 */
+    gap: 30px; /* 제품들 사이 간격을 30px로 해요 */
+    margin-top: 40px; /* 위쪽 여백을 40px 줘요 */
+}
+
+/* 개별 제품 아이템: 각각의 제품을 꾸미는 박스예요 */
+.product-item {
+    background-color: white; /* 배경색을 흰색으로 해요 */
+    border-radius: 15px; /* 모서리를 둥글게 해요 */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* 그림자를 줘서 입체감을 만들어요 */
+    overflow: hidden; /* 넘치는 부분을 숨겨요 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 변화가 부드럽게 일어나게 해요 */
+}
+
+/* 제품 아이템에 마우스를 올렸을 때: 마우스를 올리면 살짝 움직여요 */
+.product-item:hover {
+    transform: translateY(-8px); /* 살짝 위로 올라가요 */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* 그림자가 더 진해져요 */
+}
+
+/* 제품 이미지 컨테이너: 제품 사진이 들어가는 박스예요 */
+.product-image-container {
+    position: relative; /* 다른 요소들을 상대적으로 배치할 수 있게 해요 */
+    overflow: hidden; /* 넘치는 부분을 숨겨요 */
+}
+
+/* 제품 이미지: 제품 사진을 예쁘게 보이게 해요 */
+.product-image {
+    width: 100%; /* 전체 너비를 차지해요 */
+    height: 250px; /* 높이를 250px로 고정해요 */
+    object-fit: cover; /* 이미지가 찌그러지지 않게 해요 */
+    margin: 0 3px; /* 좌우 여백을 3px씩 줘요 (가이드 요구사항) */
+    transition: transform 0.3s ease; /* 변화가 부드럽게 일어나게 해요 */
+}
+
+/* 제품 이미지에 마우스를 올렸을 때: 마우스를 올리면 살짝 커져요 */
+.product-item:hover .product-image {
+    transform: scale(1.05); /* 이미지가 5% 커져요 */
+}
+
+/* 제품 정보 영역: 제품 설명이 들어가는 박스예요 */
+.product-info {
+    padding: 25px; /* 안쪽 여백을 25px 줘요 */
+}
+
+/* 제품 이름: 제품의 이름을 보여주는 제목이에요 */
+.product-name {
+    font-size: 20px; /* 글자 크기를 20px로 해요 */
+    font-weight: 600; /* 글자를 중간 굵기로 해요 */
+    color: #333; /* 글자 색을 진한 회색으로 해요 */
+    margin-bottom: 15px; /* 아래쪽 여백을 15px 줘요 */
+    line-height: 1.3; /* 줄 간격을 적당히 해요 */
+}
+
+/* 제품 설명 (짧은 버전과 전체 버전): 제품 설명을 보여주는 글이에요 */
+.product-description-short p,
+.product-description-full p {
+    font-size: 14px; /* 글자 크기를 14px로 해요 */
+    color: #666; /* 글자 색을 중간 회색으로 해요 */
+    line-height: 1.5; /* 줄 간격을 적당히 해요 */
+    margin-bottom: 8px; /* 아래쪽 여백을 8px 줘요 */
+}
+
+/* 제품 설명의 강조 텍스트: 중요한 부분을 굵게 보여줘요 */
+.product-description-full strong {
+    color: #333; /* 글자 색을 진한 회색으로 해요 */
+    font-weight: 600; /* 글자를 중간 굵기로 해요 */
+}
+
+/* 더보기/접기 버튼: 전체 설명을 보거나 숨기는 버튼이에요 */
+.toggle-btn {
+    background: linear-gradient(45deg, #007bff, #0056b3); /* 파란색 그라데이션 배경을 줘요 */
+    color: white; /* 글자 색을 흰색으로 해요 */
+    border: none; /* 테두리를 없애요 */
+    border-radius: 20px; /* 모서리를 둥글게 해요 */
+    padding: 8px 16px; /* 안쪽 여백을 줘요 */
+    font-size: 12px; /* 글자 크기를 12px로 해요 */
+    font-weight: 500; /* 글자를 중간 굵기로 해요 */
+    cursor: pointer; /* 마우스를 올리면 손가락 모양으로 바뀌어요 */
+    transition: all 0.3s ease; /* 모든 변화가 부드럽게 일어나게 해요 */
+    margin-top: 15px; /* 위쪽 여백을 15px 줘요 */
+    display: block; /* 블록 요소로 만들어요 */
+    margin-left: auto; /* 왼쪽 여백을 자동으로 해서 */
+    margin-right: auto; /* 오른쪽 여백을 자동으로 해서 가운데 정렬을 해요 */
+}
+
+/* 더보기 버튼에 마우스를 올렸을 때: 마우스를 올리면 더 진해져요 */
+.toggle-btn:hover {
+    background: linear-gradient(45deg, #0056b3, #004085); /* 색이 더 진해져요 */
+    transform: translateY(-2px); /* 살짝 위로 올라가요 */
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); /* 그림자가 생겨요 */
+}
+
+/* 태블릿 크기 화면일 때: 화면이 중간 크기일 때의 제품 스타일이에요 */
+@media (max-width: 768px) {
+    /* 제품 섹션 여백을 줄여요 */
+    .product-section {
+        padding: 60px 15px;
+    }
+    
+    /* 제품 제목 크기를 줄여요 */
+    .product-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    
+    /* 매장 이미지 높이를 줄여요 */
+    .shop-image {
+        height: 250px;
+    }
+    
+    /* 제품 그리드 간격을 줄여요 */
+    .product-grid {
+        gap: 20px;
+    }
+    
+    /* 제품 이미지 높이를 줄여요 */
+    .product-image {
+        height: 220px;
+    }
+    
+    /* 제품 정보 여백을 줄여요 */
+    .product-info {
+        padding: 20px;
+    }
+    
+    /* 제품 이름 크기를 줄여요 */
+    .product-name {
+        font-size: 18px;
+    }
+}
+
+/* 모바일 크기 화면일 때: 화면이 작을 때의 제품 스타일이에요 */
+@media (max-width: 480px) {
+    /* 제품 섹션 여백을 더 줄여요 */
+    .product-section {
+        padding: 40px 10px;
+    }
+    
+    /* 제품 제목 크기를 더 줄여요 */
+    .product-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    
+    /* 매장 이미지 높이를 더 줄여요 */
+    .shop-image {
+        height: 200px;
+        margin-bottom: 30px;
+    }
+    
+    /* 제품 그리드를 1열로 바꿔요 */
+    .product-grid {
+        grid-template-columns: 1fr; /* 1개의 열로 바꿔요 */
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    /* 제품 이미지 높이를 더 줄여요 */
+    .product-image {
+        height: 200px;
+        margin: 0 2px; /* 좌우 여백을 2px로 줄여요 */
+    }
+    
+    /* 제품 정보 여백을 더 줄여요 */
+    .product-info {
+        padding: 15px;
+    }
+    
+    /* 제품 이름 크기를 더 줄여요 */
+    .product-name {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    
+    /* 제품 설명 글자 크기를 줄여요 */
+    .product-description-short p,
+    .product-description-full p {
+        font-size: 13px;
+        margin-bottom: 6px;
+    }
+    
+    /* 더보기 버튼 크기를 조정해요 */
+    .toggle-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+        margin-top: 10px;
+    }
+} 
